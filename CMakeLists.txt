@@ -43,4 +43,6 @@ else()
 endif()
 
 target_link_libraries(qt-cmake-with-clion-boilerplate PRIVATE Qt5::Widgets)
-set_target_properties(qt-cmake-with-clion-boilerplate PROPERTIES WIN32_EXECUTABLE TRUE)
+if(CMAKE_BUILD_TYPE MATCHES Release)
+    set_target_properties(qt-cmake-with-clion-boilerplate PROPERTIES WIN32_EXECUTABLE TRUE)
+endif()
